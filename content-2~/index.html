@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumen Avenue — The Art of Visibility</title>
+  <meta name="description" content="Premium brand strategy, digital presence, modern systems, and cinematic creative direction for ambitious businesses." />
+  <meta name="theme-color" content="#0E0000" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Manrope:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --obsidian: #0E0000;
+  --obsidian-2: #090000;
+  --wine: #64090C;
+  --wine-2: #9C0512;
+  --wine-3: #2A0505;
+  --gold: #F8D794;
+  --gold-2: #DDB765;
+  --cream: #EFEACD;
+  --cream-2: #C4B495;
+  --muted: rgba(239,234,205,.67);
+  --line: rgba(248,215,148,.18);
+  --glass: rgba(255,255,255,.055);
+  --glass-2: rgba(255,255,255,.085);
+  --shadow: 0 27px 80px rgba(0,0,0,.48);
+  --radius-xl: 30px;
+  --radius-lg: 21px;
+  --radius-md: 14px;
+  --max: 1060px;
+  --ease: cubic-bezier(.2,.8,.2,1);
+}
+* { box-sizing: border-box; }
+html { scroll-padding-top: 110px; background: var(--obsidian); }
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--cream);
+  background:
+    radial-gradient(900px 800px at 65% 4%, rgba(156,5,18,.38), transparent 62%),
+    radial-gradient(760px 580px at 16% 18%, rgba(248,215,148,.10), transparent 60%),
+    linear-gradient(180deg, #0a0000 0%, #140101 36%, #0e0000 100%);
+  font-family: Manrope, Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14.4px;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -4;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(248,215,148,.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(248,215,148,.02) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: radial-gradient(circle at 50% 10%, black, transparent 72%);
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
+  opacity: .23;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button, input, textarea { font: inherit; }
+::selection { background: rgba(248,215,148,.32); color: #fff8da; }
+.skip-link { position: fixed; top: -100px; left: 20px; z-index: 9999; background: var(--gold); color: var(--obsidian); padding: 11px 14px; border-radius: 999px; }
+.skip-link:focus { top: 20px; }
+.smooth-content { will-change: transform; }
+.progress {
+  position: fixed;
+  top: 0; left: 0; height: 2px; width: 100%;
+  transform-origin: 0 50%; transform: scaleX(0);
+  z-index: 9998;
+  background: linear-gradient(90deg, transparent, var(--gold), #fff7cc);
+  box-shadow: 0 0 16px rgba(248,215,148,.65);
+}
+.orb-layer {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+  overflow: hidden;
+}
+.aurora {
+  position: absolute;
+  width: 48vw; height: 48vw;
+  min-width: 380px; min-height: 380px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: .45;
+  animation: auroraFloat 16s var(--ease) infinite alternate;
+}
+.aurora.a1 { background: rgba(156,5,18,.58); top: -11vw; right: -14vw; }
+.aurora.a2 { background: rgba(248,215,148,.12); bottom: 4vw; left: -16vw; animation-delay: -5s; }
+.aurora.a3 { background: rgba(100,9,12,.38); top: 46%; right: 10%; animation-delay: -9s; }
+@keyframes auroraFloat { to { transform: translate3d(-5vw, 4vw, 0) scale(1.08); } }
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 24px clamp(16px, 4.5vw, 64px);
+  pointer-events: none;
+}
+.nav-shell {
+  width: min(var(--max), 100%);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  pointer-events: auto;
+}
+.logo-link { display: flex; align-items: center; width: clamp(155px, 14vw, 218px); transition: transform .6s var(--ease), opacity .4s var(--ease); }
+.logo-link:hover { transform: translateY(-2px); opacity: .94; }
+.logo-link img { width: 100%; height: auto; filter: drop-shadow(0 9px 30px rgba(248,215,148,.08)); }
+.nav-panel {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 7px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: linear-gradient(150deg, rgba(14,0,0,.72), rgba(100,9,12,.50));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 16px 63px rgba(0,0,0,.28);
+  backdrop-filter: blur(20px);
+}
+.nav-panel a { color: rgba(239,234,205,.66); font-size: 11.7px; line-height: 1; letter-spacing: .08em; text-transform: uppercase; padding: 11.7px 13.5px; border-radius: 999px; transition: .36s var(--ease); }
+.nav-panel a:hover, .nav-panel a.active { color: var(--obsidian); background: var(--gold); box-shadow: 0 8px 27px rgba(248,215,148,.2); }
+.header-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12.6px 16.2px;
+  color: var(--obsidian);
+  background: linear-gradient(135deg, var(--gold), #ffe9aa 52%, var(--gold-2));
+  border-radius: 999px;
+  letter-spacing: -.01em;
+  box-shadow: 0 13.5px 41px rgba(248,215,148,.22);
+  transition: transform .36s var(--ease), box-shadow .36s var(--ease);
+}
+.header-cta:hover { transform: translateY(-2px); box-shadow: 0 20px 52px rgba(248,215,148,.28); }
+.menu-btn { display: none; width: 43px; height: 43px; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: 14px; background: rgba(14,0,0,.52); color: var(--cream); }
+.menu-btn span { display: block; width: 18px; height: 2px; background: currentColor; border-radius: 999px; position: relative; }
+.menu-btn span::before, .menu-btn span::after { content:""; position:absolute; left:0; width:18px; height:2px; background: currentColor; border-radius: 999px; transition:.3s var(--ease); }
+.menu-btn span::before { top:-6px; } .menu-btn span::after { top:6px; }
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  align-items: center;
+  padding: 130px clamp(16px, 4.5vw, 64px) 63px;
+  overflow: clip;
+}
+.hero::before {
+  content:""; position:absolute; inset:0; z-index:-2;
+  background:
+    linear-gradient(90deg, rgba(14,0,0,.95) 0%, rgba(14,0,0,.58) 54%, rgba(100,9,12,.34) 100%),
+    radial-gradient(594px 468px at 73% 56%, rgba(248,215,148,.12), transparent 66%),
+    radial-gradient(765px 558px at 80% 15%, rgba(156,5,18,.34), transparent 70%);
+}
+.hero-inner {
+  width: min(var(--max), 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(270px, .76fr);
+  gap: clamp(32px, 5.4vw, 77px);
+  align-items: center;
+}
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  width: fit-content;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: .21em;
+  font-size: clamp(10px, 0.9vw, 11.7px);
+  padding: 11.7px 16.2px;
+  border: 1px solid rgba(248,215,148,.24);
+  border-radius: 999px;
+  background: rgba(14,0,0,.42);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+}
+.eyebrow::before { content:""; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 16px var(--gold); }
+.hero-title {
+  margin: 30px 0 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: .88;
+  letter-spacing: -.055em;
+  font-size: clamp(66px, 10vw, 136px);
+  color: #fff7db;
+  text-wrap: balance;
+  text-shadow: 0 18px 63px rgba(0,0,0,.42);
+}
+.hero-title span { display: block; color: var(--gold); }
+.hero-copy {
+  max-width: 620px;
+  margin: 28px 0 0;
+  color: rgba(239,234,205,.78);
+  font-size: clamp(16px, 2vw, 24px);
+  line-height: 1.55;
+  letter-spacing: -.035em;
+}
+.hero-actions { display:flex; flex-wrap:wrap; gap:16px; margin-top: 38px; }
+.btn {
+  position: relative;
+  display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+  min-height: 52px;
+  padding: 0 24px;
+  border-radius: 12px;
+  letter-spacing: -.02em;
+  transition: transform .35s var(--ease), border-color .35s var(--ease), background .35s var(--ease), box-shadow .35s var(--ease);
+  overflow: hidden;
+}
+.btn.primary { background: linear-gradient(135deg, var(--gold), #ffeeb7 45%, #d7ad55); color: #150100; box-shadow: 0 14.4px 43px rgba(248,215,148,.22); }
+.btn.secondary { border: 1px solid rgba(239,234,205,.22); color: var(--cream); background: rgba(255,255,255,.035); }
+.btn::after { content:""; position:absolute; inset:0; background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.36) 48%, transparent 54%); transform: translateX(-120%); transition: transform .7s var(--ease); }
+.btn:hover { transform: translateY(-3px); }
+.btn:hover::after { transform: translateX(120%); }
+.hero-tags { display:flex; flex-wrap:wrap; gap: 11px 16px; margin-top: 68px; padding-top: 21px; border-top: 1px solid var(--line); color: rgba(239,234,205,.48); font-size: 11.7px; }
+.hero-visual { position:relative; min-height: 504px; perspective: 1200px; }
+.lumen-stage {
+  position:absolute; inset: 36px 0 0;
+  border: 1px solid rgba(248,215,148,.18);
+  border-radius: 38px;
+  background:
+    linear-gradient(140deg, rgba(248,215,148,.08), rgba(255,255,255,.02) 42%, rgba(156,5,18,.16)),
+    radial-gradient(468px 252px at 60% 20%, rgba(248,215,148,.16), transparent 70%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.06), var(--shadow);
+  transform: rotateX(4deg) rotateY(-7deg);
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+.lumen-stage::before { content:""; position:absolute; inset:-20%; background: url('assets/textures/lumen-dot-field.webp') center/cover; opacity:.34; mix-blend-mode: screen; animation: drift 22s linear infinite alternate; }
+.lumen-stage::after { content:""; position:absolute; inset:0; background: radial-gradient(circle at 52% 45%, transparent 0 19%, rgba(248,215,148,.18) 20%, transparent 22%), radial-gradient(circle at 52% 45%, rgba(248,215,148,.15), transparent 36%); }
+@keyframes drift { to { transform: scale(1.08) translate3d(-3%,2%,0); } }
+.floating-logo-mark {
+  position:absolute; width: 234px; aspect-ratio: 1; left: 50%; top: 48%; transform: translate(-50%, -50%) translateZ(80px);
+  border-radius: 50%; border: 1px solid rgba(248,215,148,.22);
+  background: radial-gradient(circle at 42% 30%, rgba(255,244,198,.26), rgba(248,215,148,.04) 44%, rgba(14,0,0,.25));
+  box-shadow: 0 0 81px rgba(248,215,148,.16), inset 0 0 72px rgba(248,215,148,.07);
+  animation: breathe 5.8s var(--ease) infinite alternate;
+}
+.floating-logo-mark::before {
+  content:"✦"; position:absolute; inset:0; display:grid; place-items:center; color:var(--gold); font-size: 83px; text-shadow:0 0 30px rgba(248,215,148,.72);
+}
+@keyframes breathe { to { transform: translate(-50%, -50%) translateZ(80px) scale(1.045); } }
+.metric-card {
+  position:absolute; z-index: 2;
+  border: 1px solid rgba(248,215,148,.2);
+  border-radius: 20px;
+  background: rgba(14,0,0,.6);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 18px 54px rgba(0,0,0,.38);
+  padding: 16px;
+  color: rgba(239,234,205,.72);
+  animation: cardFloat 7s var(--ease) infinite alternate;
+}
+.metric-card strong { display:block; color:var(--gold); font-size: 28.8px; letter-spacing:-.05em; margin-bottom: 5px; }
+.metric-card.m1 { left:-4%; top: 15%; width: 189px; }
+.metric-card.m2 { right:-2%; bottom: 12%; width: 198px; animation-delay:-3s; }
+@keyframes cardFloat { to { transform: translateY(-13px); } }
+section { position: relative; padding: clamp(64px, 9vw, 118px) clamp(16px, 4.5vw, 64px); }
+.container { width:min(var(--max), 100%); margin:0 auto; }
+.section-kicker { color: var(--gold); text-transform: uppercase; letter-spacing: .18em; margin-bottom: 16px; font-size: 10.8px; }
+.section-head { display:flex; justify-content: space-between; gap: 25px; align-items: end; margin-bottom: clamp(30px, 4.5vw, 57px); }
+.section-title {
+  max-width: 690px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 500;
+  line-height: .95;
+  letter-spacing: -.05em;
+  color: #fff5d4;
+  font-size: clamp(38px, 6vw, 76px);
+}
+.section-copy { max-width: 378px; color: var(--muted); font-size: 15.3px; line-height: 1.7; }
+.pill-row { display:flex; flex-wrap:wrap; gap: 11px; }
+.pill { border:1px solid var(--line); color: rgba(239,234,205,.7); border-radius:999px; padding: 10px 12.6px; background: rgba(255,255,255,.03); font-size: 11.7px; }
+.pill.gold { color: var(--obsidian); background: var(--gold); }
+.pillars-grid { display:grid; grid-template-columns: repeat(4, 1fr); gap: 14.4px; }
+.pillar-card {
+  position:relative; min-height: 275px;
+  padding: 21.6px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 18px 63px rgba(0,0,0,.24);
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+.pillar-card::before { content:""; position:absolute; inset:auto -18% -24% -18%; height: 153px; background: radial-gradient(circle, rgba(248,215,148,.13), transparent 60%); opacity:0; transition:.5s var(--ease); }
+.pillar-card:hover::before { opacity:1; }
+.pillar-index { color: var(--gold); font-family: Georgia, serif; font-size: 52px; line-height:1; opacity:.82; }
+.pillar-card h3 {
+  margin: 75px 0 12.6px;
+  font-size: 21.6px;
+  letter-spacing: -.04em;
+}
+.pillar-card p { color: rgba(239,234,205,.62); line-height: 1.65; margin:0; }
+.about-panel {
+  border-radius: var(--radius-xl);
+  border:1px solid var(--line);
+  min-height: 468px;
+  display:grid;
+  grid-template-columns: .95fr 1.05fr;
+  gap: 27px;
+  padding: clamp(21px, 4.5vw, 48px);
+  background:
+    linear-gradient(135deg, rgba(100,9,12,.46), rgba(255,255,255,.035)),
+    radial-gradient(540px 360px at 78% 24%, rgba(248,215,148,.14), transparent 70%);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.about-panel h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 500;
+  line-height:.98;
+  letter-spacing:-.05em;
+  font-size: clamp(34px, 5.4vw, 64px);
+}
+.about-panel p { color: rgba(239,234,205,.74); font-size: 16.2px; line-height:1.75; margin: 21px 0 0; }
+.about-art { position:relative; min-height: 324px; border-radius: 25px; overflow:hidden; border:1px solid rgba(248,215,148,.15); background: #090000; }
+.about-art img { width:100%; height:100%; object-fit:cover; opacity:.64; mix-blend-mode: screen; }
+.about-art .ring { position:absolute; inset: 14%; border:1px solid rgba(248,215,148,.22); border-radius:50%; animation: rotateSlow 26s linear infinite; }
+.about-art .ring::before, .about-art .ring::after { content:""; position:absolute; width:8px; height:8px; background:var(--gold); border-radius:50%; box-shadow:0 0 16px var(--gold); }
+.about-art .ring::before { top:-4px; left:50%; } .about-art .ring::after { bottom:14%; right:4%; }
+@keyframes rotateSlow { to { transform: rotate(360deg); } }
+.work { overflow:clip; }
+.work::before { content:""; position:absolute; inset: 0; z-index:-1; background: radial-gradient(810px 522px at 76% 18%, rgba(156,5,18,.28), transparent 70%); }
+.project-chapters { display:grid; gap: clamp(28px, 4.5vw, 50px); }
+.project-chapter {
+  display:grid;
+  grid-template-columns: minmax(198px, .42fr) minmax(0, 1fr);
+  gap: clamp(20px, 3.6vw, 48px);
+  align-items:start;
+  padding-top: clamp(27px, 4.5vw, 47px);
+  border-top: 1px solid var(--line);
+}
+.chapter-meta { position: sticky; top: 108px; }
+.chapter-number { color: var(--gold); font-family: Georgia, serif; font-size: 55px; line-height:1; }
+.chapter-meta h3 {
+  margin: 11px 0 11px;
+  letter-spacing:-.05em;
+  font-size: clamp(21px, 2.7vw, 34px);
+}
+.chapter-meta p { color: rgba(239,234,205,.62); line-height:1.65; max-width: 297px; }
+.project-masonry { columns: 2 280px; column-gap: 20px; }
+.project-card {
+  display:inline-block;
+  width:100%;
+  margin: 0 0 20px;
+  border-radius: 25px;
+  overflow: hidden;
+  border: 1px solid rgba(248,215,148,.16);
+  background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.025));
+  box-shadow: 0 23px 72px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.055);
+  transform: translateZ(0);
+  break-inside: avoid;
+  isolation: isolate;
+}
+.project-card.featured { width:100%; }
+.project-image { position: relative; overflow:hidden; background:#070000; }
+.project-image img { width:100%; height:auto; display:block; transition: transform .9s var(--ease), filter .9s var(--ease); }
+.project-card:hover .project-image img { transform: scale(1.035); filter: saturate(1.08) contrast(1.04); }
+.project-image::after { content:""; position:absolute; inset:0; background: linear-gradient(180deg, transparent 44%, rgba(9,0,0,.68) 100%); opacity:.86; pointer-events:none; }
+.project-info { padding: 20px; position:relative; }
+.project-type { display:flex; justify-content:space-between; gap:14.4px; color: var(--gold); font-size: 10.8px; text-transform: uppercase; letter-spacing:.16em; }
+.project-info h4 {
+  margin: 11px 0 9px;
+  line-height:1.05;
+  letter-spacing:-.055em;
+  font-size: clamp(20px, 2.7vw, 28px);
+}
+.project-info p { margin:0; color: rgba(239,234,205,.64); line-height:1.62; }
+.project-badge { position:absolute; top:14.4px; right:14.4px; z-index:2; color:#160101; background: rgba(248,215,148,.94); padding: 9px 10.8px; border-radius:999px; font-size:10.8px; box-shadow:0 12.6px 34px rgba(0,0,0,.24); }
+.process-grid { display:grid; grid-template-columns: repeat(4, 1fr); gap: 12.6px; }
+.process-card { min-height: 216px; padding: 21.6px; border-radius: 21.6px; border: 1px solid var(--line); background: rgba(255,255,255,.035); }
+.process-card span { color: var(--gold); font-family: Georgia, serif; font-size: 27px; }
+.process-card h3 {
+  margin: 47px 0 10.8px;
+  font-size: 19.8px;
+}
+.process-card p { margin:0; color: rgba(239,234,205,.62); line-height:1.65; }
+.why-grid { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14.4px; }
+.why-card { padding: 25px; border-radius: 23px; border:1px solid var(--line); background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(100,9,12,.18)); min-height: 198px; }
+.why-card h3 {
+  font-size: 25.2px;
+  letter-spacing:-.04em;
+  margin:0 0 12.6px;
+}
+.why-card p { color: rgba(239,234,205,.64); line-height:1.7; margin:0; }
+.testimonial-strip { display:grid; grid-template-columns: 1fr 1fr; gap: 16.2px; }
+.quote-card { padding: 25px; border:1px solid var(--line); border-radius: 25px; background: rgba(255,255,255,.04); }
+.quote-card blockquote {
+  margin:0;
+  font-family: Georgia, serif;
+  line-height:1.25;
+  color:#fff3ce;
+  letter-spacing:-.04em;
+  font-size: clamp(20px, 2.3vw, 28px);
+}
+.author { display:flex; align-items:center; gap:10.8px; margin-top:23.4px; color: rgba(239,234,205,.65); }
+.author img { width:43px; height:43px; object-fit:cover; border-radius:50%; }
+.cta-panel { position:relative; overflow:hidden; border-radius: 34px; border:1px solid var(--line); padding: clamp(25px, 5.4vw, 63px); background: radial-gradient(666px 396px at 80% 20%, rgba(248,215,148,.16), transparent 70%), linear-gradient(135deg, rgba(100,9,12,.7), rgba(14,0,0,.86)); box-shadow: var(--shadow); }
+.cta-panel h2 {
+  font-family: Georgia, serif;
+  letter-spacing:-.06em;
+  line-height:.94;
+  margin:0;
+  font-size: clamp(38px, 6.3vw, 82px);
+}
+.cta-panel p { color: rgba(239,234,205,.7); max-width: 522px; line-height:1.75; font-size:16.2px; margin: 21.6px 0 0; }
+.contact-form { display:grid; grid-template-columns:1fr 1fr; gap:12.6px; margin-top:30px; max-width:702px; }
+.contact-form textarea { grid-column: 1 / -1; min-height: 118px; resize: vertical; }
+.field { width:100%; border:1px solid rgba(248,215,148,.17); background: rgba(10,0,0,.48); color: var(--cream); border-radius:14px; padding: 15.3px 16.2px; outline: none; transition:.3s var(--ease); }
+.field::placeholder { color: rgba(239,234,205,.46); }
+.field:focus { border-color: rgba(248,215,148,.5); box-shadow: 0 0 0 3.6px rgba(248,215,148,.08); }
+.form-submit { border:0; cursor:pointer; margin-top: 5.4px; width: fit-content; }
+.site-footer { padding: 64px clamp(16px, 4.5vw, 64px) 30px; border-top:1px solid var(--line); }
+.footer-grid { width:min(var(--max), 100%); margin:0 auto; display:grid; grid-template-columns: 1fr .8fr .8fr; gap: 25px; }
+.footer-logo { width: 196px; margin-bottom: 19.8px; }
+.footer-grid p, .footer-grid a { color: rgba(239,234,205,.6); line-height:1.8; }
+.footer-grid h4 { margin:0 0 12.6px; color: var(--gold); text-transform:uppercase; letter-spacing:.16em; font-size:10.8px; }
+.footer-links { display:grid; gap: 8px; }
+.copyright { width:min(var(--max), 100%); margin:46.8px auto 0; padding-top:21.6px; border-top:1px solid var(--line); color:rgba(239,234,205,.44); display:flex; justify-content:space-between; gap:14.4px; flex-wrap:wrap; }
+/* GSAP owns reveal — initial hidden state only */
+.reveal { opacity: 0; transform: translateY(36px); will-change: opacity, transform; }
+.gsap-ready .reveal { opacity: 1; transform: none; }
+[data-tilt] { transform-style: preserve-3d; transition: transform .2s ease-out; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
+@media (max-width: 1040px) {
+  .header-cta, .nav-panel { display:none; }
+  .menu-btn { display:flex; }
+  .nav-shell { align-items: flex-start; }
+  .nav-panel.open { display:grid; position:absolute; top:90px; left:18px; right:18px; border-radius:22px; padding:12px; background: linear-gradient(160deg, rgba(14,0,0,.96), rgba(100,9,12,.92)); }
+  .hero-inner, .about-panel { grid-template-columns: 1fr; }
+  .hero-visual { min-height: 460px; order:-1; opacity:.72; }
+  .hero-title { font-size: clamp(58px, 11vw, 110px); }
+  .pillars-grid, .process-grid { grid-template-columns: repeat(2, 1fr); }
+  .project-chapter { grid-template-columns: 1fr; }
+  .chapter-meta { position:static; }
+}
+@media (max-width: 720px) {
+  .site-header { padding: 20px 16px; }
+  .logo-link { width: 207px; max-width: calc(100vw - 86px); }
+  .hero { padding-top: 118px; min-height: 100svh; }
+  .hero-inner { gap: 11px; }
+  .hero-visual { display:none; }
+  .hero-title { margin-top: 23px; font-size: clamp(52px, 15vw, 77px); letter-spacing:-.06em; }
+  .hero-copy { font-size: 18px; line-height:1.55; }
+  .hero-actions { display:grid; grid-template-columns: 1fr; margin-top: 28px; }
+  .btn { width:100%; }
+  .hero-tags { margin-top: 46px; font-size:10.8px; }
+  .section-head { display:grid; }
+  .pillars-grid, .process-grid, .why-grid, .testimonial-strip, .footer-grid, .contact-form { grid-template-columns: 1fr; }
+  .contact-form textarea { grid-column:auto; }
+  .project-masonry { columns: 1; }
+  .project-card { border-radius: 20px; }
+  section { padding-block: 68px; }
+  .about-panel { padding:20px; border-radius:23px; }
+  .about-art { min-height: 234px; }
+}
+
+/* Behance-Style Project Overlay CSS */
+.project-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(14, 0, 0, 0.97);
+  backdrop-filter: blur(28px);
+  transition: opacity 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.project-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.project-overlay-close {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 2010;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(14, 0, 0, 0.8);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--gold);
+  font-size: 28px;
+  cursor: pointer;
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+.project-overlay-close:hover {
+  transform: rotate(90deg);
+  border-color: var(--gold);
+  background: var(--gold);
+  color: var(--obsidian);
+}
+.project-overlay-back {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  z-index: 2010;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: rgba(14, 0, 0, 0.8);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--cream);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-15px);
+  transition: transform 0.3s var(--ease), opacity 0.3s var(--ease), border-color 0.3s ease;
+}
+.project-overlay-back.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+.project-overlay-back:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.project-overlay-inner {
+  width: min(960px, 90%);
+  margin: 120px auto 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+.project-overlay-header {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 40px;
+  max-width: 720px;
+}
+.project-overlay-kicker {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 11px;
+  font-weight: 900;
+  margin-bottom: 14px;
+  display: block;
+}
+.project-overlay-title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(38px, 6.5vw, 68px);
+  line-height: 1.05;
+  color: #fff6db;
+  margin: 0 0 24px;
+}
+.project-overlay-story {
+  color: var(--cream-2);
+  font-size: 16.5px;
+  line-height: 1.7;
+}
+.project-subfolders {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+@media (max-width: 720px) {
+  .project-subfolders {
+    grid-template-columns: 1fr;
+  }
+}
+.subfolder-card {
+  position: relative;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.01));
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  padding: 30px;
+  cursor: pointer;
+  transition: transform 0.4s var(--ease), border-color 0.4s var(--ease);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.subfolder-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--gold);
+}
+.subfolder-preview {
+  position: relative;
+  aspect-ratio: 16/10;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.subfolder-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease);
+}
+.subfolder-card:hover .subfolder-preview img {
+  transform: scale(1.05);
+}
+.subfolder-card h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--gold);
+  margin: 0;
+}
+.subfolder-card p {
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+  font-size: 14px;
+}
+.project-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 100%;
+}
+.showcase-item {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(40px);
+}
+.showcase-image-wrapper {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.01);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+}
+.showcase-image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.showcase-item-info {
+  display: grid;
+  grid-template-columns: minmax(200px, 0.35fr) 1fr;
+  gap: 30px;
+  border-left: 2px solid var(--gold);
+  padding-left: 24px;
+}
+@media (max-width: 680px) {
+  .showcase-item-info {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+.showcase-item-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--gold);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.showcase-item-desc {
+  color: var(--cream-2);
+  line-height: 1.6;
+  font-size: 14.4px;
+}
+.showcase-item-story {
+  font-style: italic;
+  font-size: 13.5px;
+  color: var(--muted);
+  margin-top: 8px;
+  display: block;
+}
+</style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="progress" aria-hidden="true"></div>
+  <div class="orb-layer" aria-hidden="true"><div class="aurora a1"></div><div class="aurora a2"></div><div class="aurora a3"></div></div>
+  <div class="smooth-content">
+    <header class="site-header">
+      <div class="nav-shell">
+        <a class="logo-link" href="#top" aria-label="Lumen Avenue home"><img src="assets/brand/lumen-avenue-logo.svg" alt="Lumen Avenue" /></a>
+        <nav class="nav-panel" id="navPanel" aria-label="Primary navigation">
+          <a href="#services">Services</a><a href="#about">About</a><a href="#work">Work</a><a href="#process">Process</a><a href="#contact">Contact</a>
+        </nav>
+        <a class="header-cta" href="#contact">Start a Project <span>↗</span></a>
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-inner">
+          <div class="hero-copy-block reveal">
+            <div class="eyebrow">Premium Creative Collective</div>
+            <h1 class="hero-title">The Art of <span>Visibility.</span></h1>
+            <p class="hero-copy">We help ambitious businesses build stronger brands, modern digital presence, and scalable systems that create lasting growth.</p>
+            <div class="hero-actions">
+              <a href="#contact" class="btn primary">Start a Project</a>
+              <a href="#work" class="btn secondary">See Our Work</a>
+            </div>
+            <div class="hero-tags"><span>Brand Strategy</span><span>·</span><span>Digital Presence</span><span>·</span><span>Modern Systems</span><span>·</span><span>Creative Direction</span></div>
+          </div>
+          <div class="hero-visual reveal" aria-hidden="true">
+            <div class="lumen-stage" data-depth=".22">
+              <div class="floating-logo-mark"></div>
+            </div>
+            <div class="metric-card m1"><strong>4×</strong>Brand systems engineered as one ecosystem.</div>
+            <div class="metric-card m2"><strong>0%</strong>Noise. Every visual choice earns its place.</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="container">
+          <div class="section-head reveal">
+            <div><div class="section-kicker">What We Do</div><h2 class="section-title">Four pillars. One cohesive system.</h2></div>
+            <p class="section-copy">Strategy, presence, systems, and creative direction — each pillar reinforces the others to create a complete brand that performs.</p>
+          </div>
+          <div class="pillars-grid">
+            <article class="pillar-card reveal" data-tilt><div class="pillar-index">01</div><h3>Brand Strategy</h3><p>Positioning, identity systems, messaging architecture, and competitive differentiation for ambitious brands.</p></article>
+            <article class="pillar-card reveal" data-tilt><div class="pillar-index">02</div><h3>Digital Presence</h3><p>Premium websites, digital experiences, and content systems that represent the brand at its highest level.</p></article>
+            <article class="pillar-card reveal" data-tilt><div class="pillar-index">03</div><h3>Modern Systems</h3><p>Automation workflows, operational infrastructure, and scalable tools that remove friction and create leverage.</p></article>
+            <article class="pillar-card reveal" data-tilt><div class="pillar-index">04</div><h3>Creative Direction</h3><p>Visual identity, campaign aesthetics, and editorial sensibility that makes a brand unforgettable.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="container">
+          <div class="about-panel reveal">
+            <div>
+              <div class="section-kicker">Brand Promise</div>
+              <h2>Work that earns trust.</h2>
+              <p>Many ambitious businesses are stronger than their presentation. Lumen Avenue closes that gap through premium design, digital architecture, and growth infrastructure designed to feel precise, cinematic, and credible.</p>
+              <div class="pill-row" style="margin-top:28px"><span class="pill gold">Strategy first</span><span class="pill">Design restraint</span><span class="pill">Scalable systems</span></div>
+            </div>
+            <div class="about-art"><img src="assets/textures/architectural-pattern.svg" alt="Abstract architectural pattern" /><span class="ring"></span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="work" id="work">
+        <div class="container">
+          <div class="section-head reveal">
+            <div><div class="section-kicker">Selected Work</div><h2 class="section-title">Project cards built around the work — not repeated filler.</h2></div>
+            <p class="section-copy">Cards now preserve each cover image’s natural ratio, group work by meaningful categories, and scale cleanly across desktop, tablet, and mobile.</p>
+          </div>
+
+            <div class="project-chapters">
+              <article class="project-chapter reveal">
+                <div class="chapter-meta">
+                  <div class="chapter-number">01</div>
+                  <h3>Real Estate Marketing</h3>
+                  <p>Community‑focused campaign assets built for credibility, clarity, and conversion.</p>
+                </div>
+                <div class="project-masonry">
+                  <a class="project-card featured" href="#contact" data-tilt data-project-id="01" data-gallery="assets/projects/01/gallery_1.webp,assets/projects/01/gallery_2.webp">
+                    <div class="project-image">
+                      <span class="project-badge">Cover</span>
+                      <img src="assets/projects/01/cover.webp" alt="Real estate marketing creative cover" style="aspect-ratio:0.7349" />
+                    </div>
+                    <div class="project-info">
+                      <div class="project-type"><span>Campaign System</span><span>NYC</span></div>
+                      <h4>Local real estate visibility system</h4>
+                      <p>Poster and campaign direction designed to make a local expert look established, high‑trust, and market‑ready.</p>
+                    </div>
+                  </a>
+                </div>
+              </article>
+              <article class="project-chapter reveal">
+                <div class="chapter-meta">
+                  <div class="chapter-number">02</div>
+                  <h3>Mortgage Marketing</h3>
+                  <p>Festive marketing assets that promote loan services with warmth, trust, and seasonal resonance.</p>
+                </div>
+                <div class="project-masonry">
+                  <a class="project-card featured" href="#contact" data-tilt data-project-id="02" data-gallery="assets/projects/02/gallery_1.webp,assets/projects/02/gallery_2.webp">
+                    <div class="project-image">
+                      <span class="project-badge">Cover</span>
+                      <img src="assets/projects/02/cover.webp" alt="Mortgage loan marketing cover" style="aspect-ratio:1/1" />
+                    </div>
+                    <div class="project-info">
+                      <div class="project-type"><span>Campaign</span><span>Seasonal</span></div>
+                      <h4>Mortgage loan campaign</h4>
+                      <p>Targeted marketing materials celebrating holidays while guiding clients toward trusted home financing.</p>
+                    </div>
+                  </a>
+                </div>
+              </article>
+              <article class="project-chapter reveal">
+                <div class="chapter-meta">
+                  <div class="chapter-number">03</div>
+                  <h3>Identity Systems</h3>
+                  <p>Premium brand visuals with restraint, recognizability, and clean production logic.</p>
+                </div>
+                <div class="project-masonry">
+                  <a class="project-card featured" href="#contact" data-tilt data-project-id="03" data-gallery="assets/projects/03/gallery_1.webp,assets/projects/03/gallery_2.webp,assets/projects/03/gallery_3.webp,assets/projects/03/gallery_4.webp,assets/projects/03/gallery_5.webp,assets/projects/03/gallery_6.webp">
+                    <div class="project-image">
+                      <span class="project-badge">Cover</span>
+                      <img src="assets/projects/03/cover.webp" alt="Identity systems design cover" style="aspect-ratio:1/1" />
+                    </div>
+                    <div class="project-info">
+                      <div class="project-type"><span>Brand Identity</span><span>System</span></div>
+                      <h4>Identity systems showcase</h4>
+                      <p>A refined identity system capturing contrast, sophistication, and modern design precision.</p>
+                    </div>
+                  </a>
+                </div>
+              </article>
+              <article class="project-chapter reveal">
+                <div class="chapter-meta">
+                  <div class="chapter-number">04</div>
+                  <h3>Social Media Designs</h3>
+                  <p>Templates and posts built for engagement, consistency, and brand reach.</p>
+                </div>
+                <div class="project-masonry">
+                  <a class="project-card featured" href="#contact" data-tilt data-project-id="04" data-gallery="assets/projects/05/gallery_1.webp,assets/projects/05/gallery_2.webp,assets/projects/05/gallery_3.webp,assets/projects/05/gallery_4.webp,assets/projects/05/gallery_5.webp,assets/projects/05/gallery_6.webp,assets/projects/05/gallery_7.webp,assets/projects/05/gallery_8.webp,assets/projects/05/gallery_9.webp,assets/projects/05/gallery_10.webp,assets/projects/05/gallery_11.webp,assets/projects/05/gallery_12.webp">
+                    <div class="project-image">
+                      <span class="project-badge">Cover</span>
+                      <img src="assets/projects/05/cover.webp" alt="Social media design cover" style="aspect-ratio:1/1" />
+                    </div>
+                    <div class="project-info">
+                      <div class="project-type"><span>Social</span><span>Campaign</span></div>
+                      <h4>Social media design kit</h4>
+                      <p>Versatile templates and post styles crafted for consistent messaging and scroll‑stopping impact.</p>
+                    </div>
+                  </a>
+                </div>
+              </article>
+              <article class="project-chapter reveal">
+                <div class="chapter-meta">
+                  <div class="chapter-number">05</div>
+                  <h3>Thumbnail Designs</h3>
+                  <p>High‑impact visual systems for thumbnails and widescreen promotional campaigns.</p>
+                </div>
+                <div class="project-masonry">
+                  <a class="project-card featured" href="#contact" data-tilt data-project-id="05" data-gallery="assets/projects/04/gallery_1.webp,assets/projects/04/gallery_2.webp,assets/projects/04/gallery_3.webp,assets/projects/04/gallery_4.webp,assets/projects/04/gallery_5.webp,assets/projects/04/gallery_6.webp,assets/projects/04/gallery_7.webp,assets/projects/04/gallery_8.webp,assets/projects/04/gallery_9.webp,assets/projects/04/gallery_10.webp,assets/projects/04/gallery_11.webp,assets/projects/04/gallery_12.webp,assets/projects/04/gallery_13.webp,assets/projects/04/gallery_14.webp,assets/projects/04/gallery_15.webp,assets/projects/04/gallery_16.webp">
+                    <div class="project-image">
+                      <span class="project-badge">Cover</span>
+                      <img src="assets/projects/04/cover.webp" alt="Thumbnail design cover" style="aspect-ratio:16/9" />
+                    </div>
+                    <div class="project-info">
+                      <div class="project-type"><span>Campaign</span><span>Wide</span></div>
+                      <h4>Thumbnail design system</h4>
+                      <p>A widescreen campaign concept using cinematic scale, atmosphere, and clear visual hierarchy.</p>
+                    </div>
+                  </a>
+                </div>
+              </article>
+              <article class="project-chapter reveal">
+                <div class="chapter-meta">
+                  <div class="chapter-number">06</div>
+                  <h3>T‑Shirt & Merch</h3>
+                  <p>Creative visuals for merchandise, apparel, and digital thumbnails that amplify brand personality.</p>
+                </div>
+                <div class="project-masonry">
+                  <a class="project-card featured" href="#contact" data-tilt data-project-id="06" data-gallery="assets/projects/06/gallery_1.webp,assets/projects/06/gallery_2.webp">
+                    <div class="project-image">
+                      <span class="project-badge">Cover</span>
+                      <img src="assets/projects/06/cover.webp" alt="Thumbnail and merchandise design cover" style="aspect-ratio:1.3938" />
+                    </div>
+                    <div class="project-info">
+                      <div class="project-type"><span>Merch</span><span>Creative</span></div>
+                      <h4>Thumbnail & merch designs</h4>
+                      <p>Custom graphics for merchandise and digital thumbnails that amplify brand personality.</p>
+                    </div>
+                  </a>
+                </div>
+              </article>
+            </div>
+          <div class="section-head reveal"><div><div class="section-kicker">Our Process</div><h2 class="section-title">How we work.</h2></div><p class="section-copy">Lean, collaborative, and precise — so ideas go from concept to launch without chaos.</p></div>
+          <div class="process-grid">
+            <article class="process-card reveal"><span>/01</span><h3>Discover</h3><p>Clarify positioning, audience, offer, constraints, and the outcome the brand must create.</p></article>
+            <article class="process-card reveal"><span>/02</span><h3>Design</h3><p>Shape identity, interface, campaign, and motion choices with deliberate visual hierarchy.</p></article>
+            <article class="process-card reveal"><span>/03</span><h3>Develop</h3><p>Build scalable digital assets and systems with performance, responsiveness, and maintainability.</p></article>
+            <article class="process-card reveal"><span>/04</span><h3>Launch & Grow</h3><p>Introduce the brand with impact, then refine from market feedback and operational data.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-head reveal"><div><div class="section-kicker">Why Lumen Avenue</div><h2 class="section-title">Built for precision. Delivered with purpose.</h2></div></div>
+          <div class="why-grid">
+            <article class="why-card reveal"><h3>Strategy First</h3><p>Every engagement starts with positioning clarity. Execution only begins after the direction is proven.</p></article>
+            <article class="why-card reveal"><h3>Systems Thinking</h3><p>Brand, website, and automation are designed to work together instead of colliding as separate pieces.</p></article>
+            <article class="why-card reveal"><h3>Premium Through Restraint</h3><p>No noise. No filler. Every detail must improve trust, clarity, conversion, or memorability.</p></article>
+            <article class="why-card reveal"><h3>Disqualify Early</h3><p>We are not built for every business. We help the right ones look unmistakably credible and ready to scale.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-head reveal"><div><div class="section-kicker">Client Voices</div><h2 class="section-title">Heard from the right places.</h2></div></div>
+          <div class="testimonial-strip">
+            <article class="quote-card reveal"><blockquote>“The direction brought clarity to everything. Our brand finally feels as premium as the work we do.”</blockquote><div class="author"><img src="assets/brand/testimonial-02.webp" alt="Client headshot" /><span>Sarah M. · Growth-stage consultancy</span></div></article>
+            <article class="quote-card reveal"><blockquote>“Every decision had intent behind it. The standard felt sharp from first call to launch.”</blockquote><div class="author"><img src="assets/brand/testimonial-01.webp" alt="Client headshot" /><span>Daniel R. · Tech founder</span></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container">
+          <div class="cta-panel reveal">
+            <div class="section-kicker">Let’s Talk</div>
+            <h2>Your next big idea deserves a sharper system.</h2>
+            <p>Send the project context. We will look for the fastest path to make the brand feel clearer, more credible, and more valuable.</p>
+            <form class="contact-form" action="mailto:khowshikbhowmik225@gmail.com" method="post" enctype="text/plain">
+              <input class="field" name="name" placeholder="Your Name" />
+              <input class="field" name="email" type="email" placeholder="Your Email" />
+              <textarea class="field" name="project" placeholder="More About The Project"></textarea>
+              <button class="btn primary form-submit" type="submit">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div><img class="footer-logo" src="assets/brand/lumen-avenue-logo.svg" alt="Lumen Avenue" /><p>Premium brand strategy, digital presence, modern systems, and creative direction for ambitious businesses.</p></div>
+        <div><h4>Contact</h4><div class="footer-links"><a href="mailto:khowshikbhowmik225@gmail.com">khowshikbhowmik225@gmail.com</a><a href="#contact">Start a project</a></div></div>
+        <div><h4>Links</h4><div class="footer-links"><a href="#about">About</a><a href="#work">Project</a><a href="#services">Services</a><a href="#top">Back to top</a></div></div>
+      </div>
+      <div class="copyright"><span>© 2026 Lumen Avenue. All Rights Reserved.</span><span>The Art of Visibility.</span></div>
+    </footer>
+  </div>
+
+  <!-- Behance-Style Project Showcase Overlay -->
+  <div id="projectOverlay" class="project-overlay" aria-hidden="true" role="dialog" data-lenis-prevent>
+    <button class="project-overlay-close" aria-label="Close project showcase">×</button>
+    <button class="project-overlay-back" aria-label="Back to folders">← Back</button>
+    <div class="project-overlay-inner">
+      <header class="project-overlay-header">
+        <span class="project-overlay-kicker">Case Study</span>
+        <h2 class="project-overlay-title">Project Title</h2>
+        <p class="project-overlay-story">Project story and overview goes here.</p>
+      </header>
+
+      <!-- Subfolders grid (visible only for multi-part projects) -->
+      <div class="project-subfolders" style="display: none;">
+        <!-- Injected dynamically -->
+      </div>
+
+      <!-- Vertical Showcase (stacked images) -->
+      <div class="project-showcase" style="display: none;">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+<!-- GSAP 3 + ScrollTrigger + Lenis smooth scroll -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" crossorigin="anonymous"></script>
+<script>
+(() => {
+  /* ─── Reduced-motion guard ──────────────────────────────────────────── */
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ─── Lenis ultra-smooth scroll ─────────────────────────────────────── */
+  const lenis = new Lenis({
+    duration: 1.28,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // expo-out
+    orientation: 'vertical',
+    gestureOrientation: 'vertical',
+    smoothWheel: !prefersReduced,
+    wheelMultiplier: 0.88,
+    touchMultiplier: 1.6,
+    infinite: false,
+  });
+
+  /* Lenis → GSAP ticker sync (critical — keeps ScrollTrigger in step) */
+  gsap.ticker.add((time) => lenis.raf(time * 1000));
+  gsap.ticker.lagSmoothing(0); // prevent GSAP catching up on tab-switch
+
+  /* ScrollTrigger must use Lenis scroll values */
+  lenis.on('scroll', ScrollTrigger.update);
+
+  /* ─── GSAP global defaults ───────────────────────────────────────────── */
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.defaults({ ease: 'power3.out', overwrite: 'auto' });
+
+  /* Mark body ready so CSS .reveal initial state (opacity:0) takes effect
+     before GSAP animates them in — prevents FOUC */
+  document.documentElement.classList.add('gsap-ready');
+
+  /* ─── Nav menu (mobile) ──────────────────────────────────────────────── */
+  const menuBtn  = document.getElementById('menuBtn');
+  const navPanel = document.getElementById('navPanel');
+  menuBtn?.addEventListener('click', () => {
+    const isOpen = navPanel.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', String(isOpen));
+  });
+  navPanel?.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => {
+      navPanel.classList.remove('open');
+      menuBtn?.setAttribute('aria-expanded', 'false');
+    })
+  );
+
+  /* ─── Anchor scroll (Lenis-aware) ────────────────────────────────────── */
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const id = link.getAttribute('href');
+      if (!id || id === '#') return;
+      const target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      lenis.scrollTo(target, { offset: -82, duration: 1.6, easing: (t) => 1 - Math.pow(1 - t, 4) });
+    });
+  });
+
+  /* ─── Progress bar (GSAP-driven) ─────────────────────────────────────── */
+  const progressBar = document.querySelector('.progress');
+  if (progressBar) {
+    ScrollTrigger.create({
+      start: 'top top',
+      end: 'bottom bottom',
+      onUpdate: (self) => {
+        gsap.set(progressBar, { scaleX: self.progress, transformOrigin: '0 50%' });
+      },
+    });
+  }
+
+  /* ─── Header: shrink + glass on scroll ───────────────────────────────── */
+  const header = document.querySelector('.site-header');
+  if (header) {
+    ScrollTrigger.create({
+      start: 'top+=80 top',
+      onEnter:  () => header.style.cssText += 'padding-top:14px;padding-bottom:14px;transition:padding .4s ease,backdrop-filter .4s ease;backdrop-filter:blur(28px);',
+      onLeaveBack: () => header.style.cssText += 'padding-top:28px;padding-bottom:28px;backdrop-filter:none;',
+    });
+  }
+
+  /* ─── Hero entrance (staggered, cinematic) ───────────────────────────── */
+  const heroBlock = document.querySelector('.hero-copy-block');
+  if (heroBlock) {
+    const heroChildren = [
+      heroBlock.querySelector('.eyebrow'),
+      heroBlock.querySelector('.hero-title'),
+      heroBlock.querySelector('.hero-copy'),
+      heroBlock.querySelector('.hero-actions'),
+      heroBlock.querySelector('.hero-tags'),
+    ].filter(Boolean);
+
+    gsap.from(heroChildren, {
+      opacity: 0,
+      y: 52,
+      duration: 1.1,
+      stagger: 0.12,
+      ease: 'power4.out',
+      delay: 0.18,
+      clearProps: 'all',
+    });
+    /* Hero visual float-in */
+    const heroVisual = document.querySelector('.hero-visual');
+    if (heroVisual) {
+      gsap.from(heroVisual, {
+        opacity: 0,
+        x: 48,
+        duration: 1.4,
+        ease: 'power3.out',
+        delay: 0.34,
+        clearProps: 'all',
+      });
+    }
+  }
+
+  /* ─── Hero parallax (lumen-stage floats up as user scrolls) ──────────── */
+  const lumenStage = document.querySelector('.lumen-stage');
+  if (lumenStage && !prefersReduced) {
+    gsap.to(lumenStage, {
+      y: -80,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 1.4,
+      },
+    });
+  }
+
+  /* ─── Section .reveal — universal scroll-triggered fade-up ──────────── */
+  document.querySelectorAll('.reveal').forEach((el) => {
+    gsap.fromTo(el,
+      { opacity: 0, y: 44 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: prefersReduced ? 0.01 : 0.88,
+        ease: 'power3.out',
+        clearProps: 'opacity,transform',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 88%',
+          end: 'top 42%',
+          toggleActions: 'play none none none',
+        },
+      }
+    );
+  });
+
+  /* ─── Pillar cards — staggered batch reveal ──────────────────────────── */
+  const pillarCards = document.querySelectorAll('.pillar-card');
+  if (pillarCards.length) {
+    gsap.fromTo(pillarCards,
+      { opacity: 0, y: 56, scale: 0.96 },
+      {
+        opacity: 1, y: 0, scale: 1,
+        duration: 0.76,
+        stagger: 0.1,
+        ease: 'power3.out',
+        clearProps: 'all',
+        scrollTrigger: {
+          trigger: '.pillars-grid',
+          start: 'top 82%',
+          toggleActions: 'play none none none',
+        },
+      }
+    );
+  }
+
+  /* ─── Project cards — slide-in per chapter ───────────────────────────── */
+  document.querySelectorAll('.project-chapter').forEach((chapter) => {
+    const card = chapter.querySelector('.project-card');
+    const meta = chapter.querySelector('.chapter-meta');
+    if (meta) {
+      gsap.fromTo(meta,
+        { opacity: 0, x: -32 },
+        {
+          opacity: 1, x: 0, duration: 0.8, ease: 'power3.out', clearProps: 'all',
+          scrollTrigger: { trigger: chapter, start: 'top 80%', toggleActions: 'play none none none' },
+        }
+      );
+    }
+    if (card) {
+      gsap.fromTo(card,
+        { opacity: 0, y: 48, scale: 0.97 },
+        {
+          opacity: 1, y: 0, scale: 1, duration: 0.92, ease: 'power3.out', clearProps: 'all',
+          scrollTrigger: { trigger: chapter, start: 'top 76%', toggleActions: 'play none none none' },
+        }
+      );
+    }
+  });
+
+  /* ─── Process cards — sequential cascade ─────────────────────────────── */
+  const processCards = document.querySelectorAll('.process-card');
+  if (processCards.length) {
+    gsap.fromTo(processCards,
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1, y: 0, duration: 0.7, stagger: 0.12, ease: 'power2.out', clearProps: 'all',
+        scrollTrigger: { trigger: '.process-grid', start: 'top 84%', toggleActions: 'play none none none' },
+      }
+    );
+  }
+
+  /* ─── Why cards ──────────────────────────────────────────────────────── */
+  const whyCards = document.querySelectorAll('.why-card');
+  if (whyCards.length) {
+    gsap.fromTo(whyCards,
+      { opacity: 0, scale: 0.94 },
+      {
+        opacity: 1, scale: 1, duration: 0.72, stagger: 0.08, ease: 'back.out(1.4)', clearProps: 'all',
+        scrollTrigger: { trigger: '.why-grid', start: 'top 84%', toggleActions: 'play none none none' },
+      }
+    );
+  }
+
+  /* ─── Quote cards — slide from alternate sides ───────────────────────── */
+  document.querySelectorAll('.quote-card').forEach((card, i) => {
+    gsap.fromTo(card,
+      { opacity: 0, x: i % 2 === 0 ? -40 : 40 },
+      {
+        opacity: 1, x: 0, duration: 0.86, ease: 'power3.out', clearProps: 'all',
+        scrollTrigger: { trigger: card, start: 'top 86%', toggleActions: 'play none none none' },
+      }
+    );
+  });
+
+  /* ─── Metric cards (hero) — float up with delay ──────────────────────── */
+  document.querySelectorAll('.metric-card').forEach((card, i) => {
+    gsap.from(card, {
+      opacity: 0, y: 28, duration: 0.9, delay: 0.7 + i * 0.2, ease: 'power3.out', clearProps: 'all',
+    });
+  });
+
+  /* ─── Aurora orbs — slow parallax drift on scroll ────────────────────── */
+  if (!prefersReduced) {
+    gsap.to('.aurora.a1', { y: -80, ease: 'none', scrollTrigger: { start: 'top top', end: 'bottom top', scrub: 2.8 } });
+    gsap.to('.aurora.a2', { y: -50, ease: 'none', scrollTrigger: { start: 'top top', end: 'bottom top', scrub: 3.6 } });
+    gsap.to('.aurora.a3', { y: -100, ease: 'none', scrollTrigger: { start: 'top top', end: 'bottom top', scrub: 2.2 } });
+  }
+
+  /* ─── CTA panel — scale-reveal ───────────────────────────────────────── */
+  const ctaPanel = document.querySelector('.cta-panel');
+  if (ctaPanel) {
+    gsap.fromTo(ctaPanel,
+      { opacity: 0, scale: 0.96, y: 40 },
+      {
+        opacity: 1, scale: 1, y: 0, duration: 1.1, ease: 'power3.out', clearProps: 'all',
+        scrollTrigger: { trigger: ctaPanel, start: 'top 82%', toggleActions: 'play none none none' },
+      }
+    );
+  }
+
+  /* ─── 3-D tilt on [data-tilt] cards ─────────────────────────────────── */
+  const isMobile = () => window.matchMedia('(max-width: 900px)').matches;
+  document.querySelectorAll('[data-tilt]').forEach((card) => {
+    card.addEventListener('pointermove', (e) => {
+      if (isMobile()) return;
+      const r = card.getBoundingClientRect();
+      const x = ((e.clientX - r.left) / r.width  - .5) * 7;
+      const y = ((e.clientY - r.top)  / r.height - .5) * -7;
+      gsap.to(card, { rotationY: x, rotationX: y, translateY: -4, duration: 0.22, ease: 'power2.out', transformPerspective: 900, transformStyle: 'preserve-3d' });
+    });
+    card.addEventListener('pointerleave', () => {
+      gsap.to(card, { rotationY: 0, rotationX: 0, translateY: 0, duration: 0.6, ease: 'power3.out' });
+    });
+  });
+
+  /* ─── Active nav link highlight on scroll ────────────────────────────── */
+  const sections = document.querySelectorAll('section[id], main[id]');
+  const navLinks = document.querySelectorAll('.nav-panel a');
+  sections.forEach((sec) => {
+    ScrollTrigger.create({
+      trigger: sec,
+      start: 'top 55%',
+      end: 'bottom 55%',
+      onEnter: () => setActiveNav(sec.id),
+      onEnterBack: () => setActiveNav(sec.id),
+    });
+  });
+  function setActiveNav(id) {
+    navLinks.forEach((a) => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+    });
+  }
+
+  /* ─── Projects Data ─────────────────────────────────────────────────── */
+  const projectsData = {
+    "01": {
+      title: "Real Estate Marketing",
+      kicker: "Campaign System",
+      story: "For a high-end agent in NYC, visibility is everything. We crafted a brand ecosystem that exudes trust, authority, and premium market readiness. By contrasting modern typography with rich gold details, we highlight value propositions cleanly.",
+      images: [
+        {
+          src: "assets/projects/01/cover.webp",
+          title: "Elite Realty Showcase Cover",
+          desc: "Premium hero artwork featuring top producer Nitai Paul, introducing the NYC real estate campaign.",
+          story: "A bold cover visual designed to establish instant authority in the competitive New York luxury market."
+        },
+        {
+          src: "assets/projects/01/gallery_1.webp",
+          title: "Property Feature Presentation",
+          desc: "Clean typography layout presenting a prominent property listing in Jamaica, NY.",
+          story: "Maximizing readability and impact through elegant type sizing and high-contrast styling."
+        },
+        {
+          src: "assets/projects/01/gallery_2.webp",
+          title: "Campaign Collateral Front Cover",
+          desc: "High-impact brand layout featuring a bold testimonial and direct contact details.",
+          story: "Blends professional corporate portraits with sleek golden geometric frames to catch the eye."
+        }
+      ]
+    },
+    "02": {
+      title: "Mortgage Loan Systems",
+      kicker: "Fintech Marketing",
+      story: "Financial services require a balance of credibility and modern visual appeal. We established a trustworthy color palette and structured spacing, simplifying complex financial concepts into punchy, scannable layouts that stand out in crowded digital spaces.",
+      images: [
+        {
+          src: "assets/projects/02/cover.webp",
+          title: "Mortgage Campaign Cover",
+          desc: "Clean design integrating trust building components for a modern financial campaign.",
+          story: "The brand colors and design structure speak directly to first-time homebuyers and refinancing prospects."
+        },
+        {
+          src: "assets/projects/02/gallery_1.webp",
+          title: "Community Engagement Graphics",
+          desc: "A beautiful, premium holiday poster for community outreach and engagement.",
+          story: "Eid Mubarak greeting design aligned with the agency's primary corporate color system."
+        },
+        {
+          src: "assets/projects/02/gallery_2.webp",
+          title: "Financial Education Presentation",
+          desc: "High-contrast educational thumbnail design focusing on mortgage and loan tips.",
+          story: "Using large, legible headlines and financial icons to drive high click-through rates."
+        }
+      ]
+    },
+    "03": {
+      title: "Identity Systems & Branding",
+      kicker: "Corporate Identity",
+      story: "Establishing distinct identity guidelines for ambitious brands. We structured the project folder to allow client exploration of different sub-brands, maintaining high scalability and tactile layout guidelines.",
+      subfolders: [
+        {
+          id: "czar_menz",
+          title: "Czar Menz",
+          desc: "Masculine luxury apparel branding, combining retro tag templates with minimal logo marks.",
+          preview: "assets/projects/03/czar_menz/cover.webp",
+          images: [
+            {
+              src: "assets/projects/03/czar_menz/cover.webp",
+              title: "Czar Menz Identity Cover",
+              desc: "Refined cover introducing the masculine luxury brand identity for Czar Menz.",
+              story: "Setting a mysterious, premium tone for a modern fashion and lifestyle brand."
+            },
+            {
+              src: "assets/projects/03/czar_menz/gallery_1.webp",
+              title: "Premium Packaging & Apparel Design",
+              desc: "Product design mockup showcasing Czar Menz premium clothing tags and packaging.",
+              story: "A cohesive customer unboxing experience driven by stark typography and gold foil."
+            },
+            {
+              src: "assets/projects/03/czar_menz/gallery_2.webp",
+              title: "Corporate Stationery & Logo Mark",
+              desc: "Minimal corporate stationery layout demonstrating emblem scalability.",
+              story: "Ensuring the logo holds its structural integrity across digital screens and physical labels."
+            }
+          ]
+        },
+        {
+          id: "wellstarr_media",
+          title: "Wellstarr Media",
+          desc: "Vibrant and clean design system for a progressive corporate media agency.",
+          preview: "assets/projects/03/wellstarr_media/cover.webp",
+          images: [
+            {
+              src: "assets/projects/03/wellstarr_media/cover.webp",
+              title: "Wellstarr Media Brand Launch",
+              desc: "Vibrant and clean cover showcasing Wellstarr Media's corporate design system.",
+              story: "An energetic color scheme that conveys corporate power and modern flexibility."
+            },
+            {
+              src: "assets/projects/03/wellstarr_media/gallery_1.webp",
+              title: "System Architecture Presentation",
+              desc: "Brand guidelines mockup outlining the grid structure and logo ratios.",
+              story: "A comprehensive brand grid designed to keep corporate communication consistent."
+            },
+            {
+              src: "assets/projects/03/wellstarr_media/gallery_2.webp",
+              title: "Digital Assets Showcase",
+              desc: "Design mockup of social assets and digital touchpoints.",
+              story: "Perfectly balanced compositions designed to perform on social networks."
+            },
+            {
+              src: "assets/projects/03/wellstarr_media/gallery_3.webp",
+              title: "Brand Collateral Stack",
+              desc: "Showcase of corporate business cards and stationery sets.",
+              story: "Elegant print layouts featuring deep, premium colors and clean margins."
+            },
+            {
+              src: "assets/projects/03/wellstarr_media/gallery_4.webp",
+              title: "Creative Direction Framework",
+              desc: "Guidelines cover showing the overall design direction and brand ethos.",
+              story: "Empowering the content creation team with clear typographic directives."
+            }
+          ]
+        }
+      ]
+    },
+    "04": {
+      title: "Social Media Campaigns",
+      kicker: "Digital Campaigns",
+      story: "Scroll-stopping social layouts designed to command attention and convey brand authority instantly across diverse media platforms. We prioritize geometric balance, high contrast, and dynamic visual anchors.",
+      images: [
+        {
+          src: "assets/projects/05/cover.webp",
+          title: "Social Presence System",
+          desc: "High-impact layout presenting social media campaigns.",
+          story: "Optimized for Instagram, Facebook, and LinkedIn streams with clear typography."
+        },
+        {
+          src: "assets/projects/05/gallery_1.webp",
+          title: "Webinar Launch Keynote",
+          desc: "Premium promotional graphics promoting a free webinar session.",
+          story: "Clean visual organization prioritizing speaker authority and value delivery."
+        },
+        {
+          src: "assets/projects/05/gallery_2.webp",
+          title: "Cosmos Design Engagement",
+          desc: "Abstract, modern design layout showing cosmic elements and typography.",
+          story: "Evoking curiosity and deep brand immersion through beautiful starry backgrounds."
+        },
+        {
+          src: "assets/projects/05/gallery_3.webp",
+          title: "Jeep Adventure Promotions",
+          desc: "Automotive graphic design showing a stylized jeep on a dynamic grid.",
+          story: "A high-octane style combining photography, line grids, and adventure branding."
+        },
+        {
+          src: "assets/projects/05/gallery_4.webp",
+          title: "Caurasol Slide Deck Presentation",
+          desc: "Cohesive multi-slide carousel design for social feeds.",
+          story: "Ensuring visual rhythm as users swipe through educational or promotional cards."
+        },
+        {
+          src: "assets/projects/05/gallery_5.webp",
+          title: "Member Recruitment Design",
+          desc: "Corporate membership invitation layout for Divinity creative community.",
+          story: "A clean layout featuring futuristic details and strong, direct call-to-actions."
+        }
+      ]
+    },
+    "05": {
+      title: "Thumbnail Designs",
+      kicker: "YouTube Systems",
+      story: "Maximizing click-through rates (CTR) with high-concept layouts, stark expressions, and custom 3D depth layers. Each thumbnail is a miniature billboard engineered to stand out in high-competition feeds.",
+      images: [
+        {
+          src: "assets/projects/04/cover.webp",
+          title: "High-CTR Thumbnail System",
+          desc: "A showcase of high-performing, high-click-through-rate YouTube thumbnails.",
+          story: "A clean cover illustrating our visual hierarchy and color theories."
+        },
+        {
+          src: "assets/projects/04/gallery_1.webp",
+          title: "The Prison of Comfort",
+          desc: "Stunning conceptual thumbnail exploring potential, success, and self-limitations.",
+          story: "Uses intense color splits and emotional expressions to drive instant curiosity."
+        },
+        {
+          src: "assets/projects/04/gallery_2.webp",
+          title: "YOU vs YOUR EXCUSES",
+          desc: "High-energy portrait composition detailing self-discipline and daily wars.",
+          story: "Contrasts cold backgrounds with bright golden text to focus user attention."
+        },
+        {
+          src: "assets/projects/04/gallery_3.webp",
+          title: "25 Lies of Wealth Creation",
+          desc: "Financial thumbnail design detailing wealth myths and truths.",
+          story: "Using structured grid formatting and recognizable financial symbols for credibility."
+        },
+        {
+          src: "assets/projects/04/gallery_4.webp",
+          title: "Le Graal Yellow Edition",
+          desc: "Fashion and brand-centric thumbnail design featuring premium yellow colorways.",
+          story: "A high-fashion concept scaled down to mobile thumbnail dimensions perfectly."
+        }
+      ]
+    },
+    "06": {
+      title: "T-Shirt & Merch",
+      kicker: "Apparel Design",
+      story: "Apparel design that people want to wear. We combine hand-drawn retro illustrations with vintage typography to create a streetwear aesthetic that feels premium and builds genuine brand storytelling.",
+      images: [
+        {
+          src: "assets/projects/06/cover.webp",
+          title: "Premium T-Shirt Mockup",
+          desc: "High-fidelity apparel design and mockup for a barbershop campaign.",
+          story: "The cover showcases the physical print layout on a premium cotton tee."
+        },
+        {
+          src: "assets/projects/06/gallery_1.webp",
+          title: "Retro Barber T-Shirt Design",
+          desc: "Detailed illustration of a barbershop chair with vintage typography.",
+          story: "A classic look updated with modern line art, achieving a clean streetwear feel."
+        },
+        {
+          src: "assets/projects/06/gallery_2.webp",
+          title: "Streetwear Brand Layout",
+          desc: "Lookbook display showing the design in a lifestyle context.",
+          story: "Placing the garment in a retro-themed barbershop to reinforce brand heritage."
+        }
+      ]
+    }
+  };
+
+  /* ─── Behance-Style Project Overlay Controller ────────────────────────── */
+  const overlay = document.getElementById('projectOverlay');
+  const overlayTitle = overlay?.querySelector('.project-overlay-title');
+  const overlayStory = overlay?.querySelector('.project-overlay-story');
+  const overlayKicker = overlay?.querySelector('.project-overlay-kicker');
+  const projectSubfolders = overlay?.querySelector('.project-subfolders');
+  const projectShowcase = overlay?.querySelector('.project-showcase');
+  const closeBtn = overlay?.querySelector('.project-overlay-close');
+  const backBtn = overlay?.querySelector('.project-overlay-back');
+  let activeProjectId = null;
+
+  const renderShowcase = (images) => {
+    if (!projectShowcase) return;
+    
+    projectShowcase.innerHTML = images.map(img => `
+      <div class="showcase-item">
+        <div class="showcase-image-wrapper">
+          <img src="${img.src}" alt="${img.title}" loading="lazy" />
+        </div>
+        <div class="showcase-item-info">
+          <h4 class="showcase-item-title">${img.title}</h4>
+          <div>
+            <p class="showcase-item-desc">${img.desc}</p>
+            <span class="showcase-item-story">${img.story}</span>
+          </div>
+        </div>
+      </div>
+    `).join('');
+
+    // GSAP ScrollTrigger Animations for stacked images
+    // First, clear any existing triggers for this scroller
+    ScrollTrigger.getAll().forEach(st => {
+      if (st.vars.scroller === '#projectOverlay') st.kill();
+    });
+
+    gsap.utils.toArray('.showcase-item').forEach(item => {
+      gsap.fromTo(item,
+        { opacity: 0, y: 50, scale: 0.98 },
+        {
+          opacity: 1, y: 0, scale: 1,
+          duration: 0.88, ease: 'power2.out',
+          scrollTrigger: {
+            trigger: item,
+            scroller: '#projectOverlay',
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          }
+        }
+      );
+    });
+
+    // Make sure triggers recalculate correct heights
+    setTimeout(() => ScrollTrigger.refresh(), 200);
+  };
+
+  const openProject = (projectId) => {
+    const project = projectsData[projectId];
+    if (!project || !overlay) return;
+
+    activeProjectId = projectId;
+    if (overlayTitle) overlayTitle.textContent = project.title;
+    if (overlayStory) overlayStory.textContent = project.story;
+    if (overlayKicker) overlayKicker.textContent = project.kicker;
+
+    // Reset visibility
+    if (projectSubfolders) {
+      projectSubfolders.innerHTML = '';
+      projectSubfolders.style.display = 'none';
+    }
+    if (projectShowcase) {
+      projectShowcase.innerHTML = '';
+      projectShowcase.style.display = 'none';
+    }
+    backBtn?.classList.remove('visible');
+
+    if (project.subfolders) {
+      // Load subfolders navigation
+      if (projectSubfolders) {
+        projectSubfolders.innerHTML = project.subfolders.map(sub => `
+          <div class="subfolder-card" data-subfolder-id="${sub.id}">
+            <div class="subfolder-preview">
+              <img src="${sub.preview}" alt="${sub.title}" loading="lazy" />
+            </div>
+            <h3>${sub.title}</h3>
+            <p>${sub.desc}</p>
+          </div>
+        `).join('');
+
+        projectSubfolders.querySelectorAll('.subfolder-card').forEach(card => {
+          card.addEventListener('click', () => {
+            const subId = card.getAttribute('data-subfolder-id');
+            openSubfolder(subId);
+          });
+        });
+        
+        projectSubfolders.style.display = 'grid';
+      }
+    } else {
+      // Direct vertical showcase
+      if (projectShowcase) {
+        projectShowcase.style.display = 'flex';
+        renderShowcase(project.images);
+      }
+    }
+
+    overlay.classList.add('open');
+    overlay.scrollTop = 0;
+    lenis.stop(); // Lock page scrolling
+  };
+
+  const openSubfolder = (subfolderId) => {
+    const project = projectsData[activeProjectId];
+    if (!project || !project.subfolders) return;
+
+    const sub = project.subfolders.find(s => s.id === subfolderId);
+    if (!sub) return;
+
+    if (overlayTitle) overlayTitle.textContent = `${project.title} — ${sub.title}`;
+    if (overlayStory) overlayStory.textContent = sub.desc;
+
+    if (projectSubfolders) projectSubfolders.style.display = 'none';
+    if (projectShowcase) {
+      projectShowcase.style.display = 'flex';
+      renderShowcase(sub.images);
+    }
+    
+    backBtn?.classList.add('visible');
+    overlay.scrollTop = 0;
+  };
+
+  const goBack = () => {
+    const project = projectsData[activeProjectId];
+    if (!project) return;
+
+    // Return to subfolders list
+    if (overlayTitle) overlayTitle.textContent = project.title;
+    if (overlayStory) overlayStory.textContent = project.story;
+
+    if (projectShowcase) {
+      projectShowcase.innerHTML = '';
+      projectShowcase.style.display = 'none';
+    }
+    if (projectSubfolders) projectSubfolders.style.display = 'grid';
+    
+    backBtn?.classList.remove('visible');
+    overlay.scrollTop = 0;
+  };
+
+  const closeProject = () => {
+    overlay?.classList.remove('open');
+    lenis.start(); // Unlock page scrolling
+    activeProjectId = null;
+    
+    // Kill any active ScrollTriggers inside overlay
+    ScrollTrigger.getAll().forEach(st => {
+      if (st.vars.scroller === '#projectOverlay') st.kill();
+    });
+  };
+
+  closeBtn?.addEventListener('click', closeProject);
+  backBtn?.addEventListener('click', goBack);
+
+  // Keyboard support
+  addEventListener('keydown', (e) => {
+    if (!overlay?.classList.contains('open')) return;
+    if (e.key === 'Escape') closeProject();
+  });
+
+  // Attach to project cards
+  document.querySelectorAll('.project-card').forEach(card => {
+    card.removeAttribute('href'); // Prevent page jump
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', (e) => {
+      e.preventDefault();
+      const pId = card.getAttribute('data-project-id');
+      if (pId) openProject(pId);
+    });
+  });
+
+  /* ─── Refresh ScrollTrigger after fonts/images load ─────────────────── */
+  window.addEventListener('load', () => ScrollTrigger.refresh());
+
+})();
+</script>
+</body>
+</html>
