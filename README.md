@@ -1,1 +1,27 @@
-{"data":"IyBMdW1lbiBBdmVudWUg4oCUIFByZW1pdW0gU3RhdGljIFdlYnNpdGUKClRoaXMgcGFja2FnZSBjb250YWlucyBhIGNpbmVtYXRpYywgcmVzcG9uc2l2ZSBzdGF0aWMgcmVidWlsZCBvZiB0aGUgTHVtZW4gQXZlbnVlIGxhbmRpbmcgcGFnZS4KCiMjIEZpbGVzCgotIGBpbmRleC5odG1sYCDigJQgcHJvZHVjdGlvbiB2ZXJzaW9uIHVzaW5nIGxvY2FsIGFzc2V0cy4KLSBgcHJldmlldy1zdGFuZGFsb25lLmh0bWxgIOKAlCBzaW5nbGUtZmlsZSBwcmV2aWV3IHdpdGggaW1hZ2VzIGVtYmVkZGVkLgotIGBhc3NldHMvcHJvamVjdHMvMDEvY292ZXIud2VicGAgdGhyb3VnaCBgYXNzZXRzL3Byb2plY3RzLzA0L2NvdmVyLndlYnBgIOKAlCBwcm9qZWN0IHNlY3Rpb24gY292ZXJzLgoKIyMgUHJvamVjdCBjb3ZlciByZXBsYWNlbWVudCBydWxlCgpUaGUgY2FyZCBzeXN0ZW0gaXMgbWFwcGVkIHRvIHlvdXIgcmVxdWVzdGVkIGZvbGRlciBvcmRlcjoKCjEuIGBhc3NldHMvcHJvamVjdHMvMDEvY292ZXIud2VicGAKMi4gYGFzc2V0cy9wcm9qZWN0cy8wMi9jb3Zlci53ZWJwYAozLiBgYXNzZXRzL3Byb2plY3RzLzAzL2NvdmVyLndlYnBgCjQuIGBhc3NldHMvcHJvamVjdHMvMDQvY292ZXIud2VicGAKClJlcGxhY2UgYW55IGNvdmVyIGltYWdlIHdpdGggdGhlIHNhbWUgZmlsZW5hbWUgYW5kIHRoZSBjYXJkIHdpbGwgYXV0b21hdGljYWxseSBwcmVzZXJ2ZSB0aGUgaW1hZ2UgcmF0aW8uIE5vIENTUyBjaGFuZ2UgaXMgcmVxdWlyZWQuCgojIyBEZXNpZ24gbm90ZXMKCi0gQ29sb3JzIGZvbGxvdyB0aGUgb3JpZ2luYWwgTHVtZW4gQXZlbnVlIHBhbGV0dGU6IG9ic2lkaWFuIGJsYWNrLCB3aW5lIHJlZCwgY2luZW1hdGljIG1hcm9vbiBncmFkaWVudHMsIHdhcm0gZ29sZCwgYW5kIGNyZWFtIHR5cG9ncmFwaHkuCi0gQ2FyZHMgdXNlIG5hdHVyYWwgaW1hZ2UgaGVpZ2h0LCBub3QgZm9yY2VkIGRpc3RvcnRpb24uCi0gQW5pbWF0aW9ucyBhcmUgYnVpbHQgd2l0aCB2YW5pbGxhIEphdmFTY3JpcHQgYW5kIENTUy4gTm8gZXh0ZXJuYWwgcnVudGltZSBpcyByZXF1aXJlZC4KLSBTbW9vdGggc2Nyb2xsaW5nIGlzIGVuYWJsZWQgb24gZGVza3RvcCBhbmQgZGlzYWJsZWQgb24gc21hbGwgbW9iaWxlIHNjcmVlbnMgZm9yIHN0YWJpbGl0eS4K"}
+# Lumen Avenue — Premium Static Website
+
+This package contains a cinematic, responsive static rebuild of the Lumen Avenue landing page.
+
+## Files
+
+- `index.html` — production version using local assets.
+- `preview-standalone.html` — single-file preview with images embedded.
+- `assets/projects/01/cover.webp` through `assets/projects/04/cover.webp` — project section covers.
+
+## Project cover replacement rule
+
+The card system is mapped to your requested folder order:
+
+1. `assets/projects/01/cover.webp`
+2. `assets/projects/02/cover.webp`
+3. `assets/projects/03/cover.webp`
+4. `assets/projects/04/cover.webp`
+
+Replace any cover image with the same filename and the card will automatically preserve the image ratio. No CSS change is required.
+
+## Design notes
+
+- Colors follow the original Lumen Avenue palette: obsidian black, wine red, cinematic maroon gradients, warm gold, and cream typography.
+- Cards use natural image height, not forced distortion.
+- Animations are built with vanilla JavaScript and CSS. No external runtime is required.
+- Smooth scrolling is enabled on desktop and disabled on small mobile screens for stability.
